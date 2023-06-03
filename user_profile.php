@@ -24,21 +24,28 @@ include "backend/includes/connection.php";
   <?php
   include "headmenu.php";
 
-
-  // // cek apakah yang mengakses halaman ini sudah login
-  // if($_SESSION['role']==""){
-  // 	header("location:index.php?pesan=gagal");
-  // }
+  $sql = "SELECT * FROM peserta WHERE ID_peserta='$_SESSION[ID_peserta]'";
+  $result = mysqli_query($koneksi, "$sql");
+  $data = mysqli_fetch_array($result);
 
   ?>
   <div class="container-fluid mt-5">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="card">
           <div class="card-body">
             Main Menu
             <hr>
             <ul class="list-group">
+              <div class="mb-3" style="text-align: center;">
+                <img class="display-image" id="myImg" src="peserta_foto/<?php echo $data['foto']; ?>" height='100px' width='100px'>
+              </div>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+              </div>
               <a href="user_index.php" class="list-group-item text-dark text-decoration-none">Dashboard</a>
               <a href="user_profile.php" class="list-group-item text-dark text-decoration-none">Profile</a>
               <a href="pencarian.php" class="list-group-item text-dark text-decoration-none">Pencarian Data</a>
@@ -48,48 +55,22 @@ include "backend/includes/connection.php";
           </div>
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-9">
         <div class="card">
           <div class="card-body">
             Profile
             <hr>
             <?php
+            $sql = "SELECT * FROM peserta WHERE ID_peserta='$_SESSION[ID_peserta]'";
+            $result = mysqli_query($koneksi, "$sql");
+            $data = mysqli_fetch_array($result);
+            ?>
 
-            // form memasukan data ke tabel
-            if (isset($_POST['update'])) {
-              $ID_peserta     = $_POST['ID_peserta'];
-              $nama           = $_POST['nm_lengkap'];
-              $username       = $_POST['username'];
-              $tempat_lahir   = $_POST['tpt_lahir'];
-              $tgl_lahir      = $_POST['tgl_lahir'];
-              $jenis_kelamin  = $_POST['jenis_kelamin'];
-              $tb             = $_POST['tb'];
-              $bb             = $_POST['bb'];
-
-              // koneksi
-              include_once("backend/includes/connection.php");
-
-              // memasukan data
-              $sql = "UPDATE peserta SET nama='$nama', username='$username', tpt_lahir='$tempat_lahir', tgl_lahir='$tgl_lahir', jenis_kelamin='$jenis_kelamin', tb='$tb', bb='$bb'  WHERE ID_peserta=$id";
-              $result = mysqli_query($koneksi, "$sql");
-
-
-              // pesan ketika menambahkan data
-              echo "<script>;window.alert('Data Peserta berhasil diubah!');
-                        window.location=(href='user_index.php')</script>";
-            } ?>
             <div class="col-md-12">
               <div class="panel panel-default">
 
                 <div class="panel-body">
-
-
-                  <?php
-                  $sql = "SELECT * FROM peserta WHERE ID_peserta='$_SESSION[ID_peserta]'";
-                  $result = mysqli_query($koneksi, "$sql");
-                  $data = mysqli_fetch_array($result);
-                  ?>
-                  <form action="user_index.php" method="post" name="form">
+                  <form action="update_user.php" method="post" name="form">
                     <table width="12%" border="0">
                       <div class="form-group mb-3">
                         <label>Nama</label>
@@ -117,11 +98,11 @@ include "backend/includes/connection.php";
                       </div>
                       <div class="form-group mb-3">
                         <label>Kategori Tanding</label>
-                        <input type="text" class="form-control" name="kategori_tanding" value="<?php echo $data['kategori_tanding']; ?>" placeholder="Kategori Tanding">
+                        <input type="text" class="form-control" name="kategori_tanding" value="<?php echo $data['kategori_tanding']; ?>" placeholder="Kategori Tanding" disabled>
                       </div>
                       <div class="form-group mb-3">
                         <label>Golongan</label>
-                        <input type="text" class="form-control" name="golongan" value="<?php echo $data['golongan']; ?>" placeholder="Golongan">
+                        <input type="text" class="form-control" name="golongan" value="<?php echo $data['golongan']; ?>" placeholder="Golongan" disabled>
                       </div>
                       <div class="form-group mb-3">
                         <label>Kontingen</label>
@@ -147,8 +128,134 @@ include "backend/includes/connection.php";
     </div>
   </div>
 
+  <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById('myImg');
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function() {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+  </script>
+
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>
+<style>
+  #myImg {
+    cursor: pointer;
+    transition: 0.5s;
+    max-width: 200px;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+
+  }
+
+  #myImg:hover {
+    opacity: 0.7;
+  }
+
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+  }
+
+  /* Modal Content (image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+
+  /* Caption of Modal Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+
+  /* Add Animation */
+  .modal-content,
+  #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+
+  @keyframes zoom {
+    from {
+      transform: scale(0.1)
+    }
+
+    to {
+      transform: scale(1)
+    }
+  }
+
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px) {
+    .modal-content {
+      width: 100%;
+    }
+  }
+</style>
