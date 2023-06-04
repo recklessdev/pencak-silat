@@ -8,13 +8,6 @@ $today = date("Y-m-d");
 $sqlkelastanding = "SELECT * FROM kelastanding ORDER BY nm_kelastanding ASC;";
 $carikelas = mysqli_query($koneksi, $sqlkelastanding);
 
-//Mulai Autocomplete Cari asal kontingen
-// $query_kontingen = "SELECT nama_kontingen,kota FROM kontingen order by kota,nama_kontingen ASC";
-// $result = mysqli_query($koneksi, $query_kontingen);
-// while ($data = mysqli_fetch_array($kueri)) {
-// 	$arrAsalKontingen[] = $data[0];
-// }
-
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -106,81 +99,96 @@ $carikelas = mysqli_query($koneksi, $sqlkelastanding);
 
 								<div class="row">
 									<div class="col-md-6 mb-3">
-											<h6>Foto/Scan KTP</h6>
-											<td><input type=file id='ktppeserta' name='ktppeserta' class="input form-control"> File Gambar/Foto. Max size: 500 KB</td>
+										<h6>Foto/Scan KTP</h6>
+										<td><input type=file id='ktppeserta' name='ktppeserta' class="input form-control"> File Gambar/Foto. Max size: 500 KB</td>
 									</div>
 									<div class="col-md-6 mb-3">
-											<h6>Foto Peserta</h6>
-											<td><input type="file" id="fotopeserta" name="fotopeserta" class="input form-control"> File Gambar/Foto. Max size: 500 KB</td>
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col-md-6 mb-3">
-											<h6>Scan Akta Kelahiran</h6>
-											<td><input type="file" id="akta" name="akta" class="input form-control"> Max size: 3 MB</td>
-									</div>
-									<div class="col-md-6 mb-3">
-											<h6>Kategori Tanding</h6>
-											<td>
-												<select name="kategori_tanding" id="kategori_tanding" class="input form-control">
-													<option value="Tanding">Tanding</option>
-												</select>
-											</td>
+										<h6>Foto Peserta</h6>
+										<td><input type="file" id="fotopeserta" name="fotopeserta" class="input form-control"> File Gambar/Foto. Max size: 500 KB</td>
 									</div>
 								</div>
 
 								<div class="row">
 									<div class="col-md-6 mb-3">
-											<h6>Golongan</h6>
-											<td>
-												<select name="golongan" id="golongan" class="input form-control">
-													<option value="Remaja">Remaja</option>
-													<option value="Dewasa">Dewasa</option>
-												</select>
-											</td>
+										<h6>Scan Akta Kelahiran</h6>
+										<td><input type="file" id="akta" name="akta" class="input form-control"> Max size: 3 MB</td>
 									</div>
 									<div class="col-md-6 mb-3">
-											<h6>Kontingen</h6>
-											<div class="form-group search">
-												<select name="kontingen" id="kontingen" class="input selectpicker form-control" data-live-search="true" data-size="6" data-show-subtext="true">
-													<option value="" selected="true" disabled="disabled">Pilih Kontingen</option>
-													<?php
-														$query_kontingen = "SELECT nama_kontingen,kota FROM kontingen order by kota,nama_kontingen ASC";
-														$result = mysqli_query($koneksi, $query_kontingen);
-	
-														if (mysqli_num_rows($result) > 0) {
-															$currentKota = '';
-															while ($row = mysqli_fetch_assoc($result)) {
-																$kota = $row['kota'];
-																$kontingen = $row['nama_kontingen'];
-															
-																if ($kota !== $currentKota) {
-																	if ($currentKota !== '') {
-																		echo "</optgroup>";
-																	}
-																	echo "<optgroup label='$kota'>";
-																}
-															
-																echo "<option value='$kontingen'>$kontingen</option>";
-															
-																$currentKota = $kota;
+										<h6>Kategori Tanding</h6>
+										<td>
+											<select name="kategori_tanding" id="kategori_tanding" class="input">
+												<option value="Tanding">Tanding</option>
+											</select>
+										</td>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-6 mb-2">
+										<h6>Golongan</h6>
+										<td>
+											<select name="golongan" id="golongan" class="input">
+												<option value="Remaja">Remaja</option>
+												<option value="Dewasa">Dewasa</option>
+											</select>
+										</td>
+									</div>
+									<div class="col-md-6 mb-2">
+										<h6>Kontingen</h6>
+										<div class="form-group search">
+											<select name="kontingen" id="kontingen" class="input selectpicker form-control" data-live-search="true" data-size="6">
+												<option value="" selected="true" disabled="disabled">Pilih Kontingen</option>
+												<?php
+												$query_kontingen = "SELECT nama_kontingen,kota FROM kontingen order by kota,nama_kontingen ASC";
+												$result = mysqli_query($koneksi, $query_kontingen);
+
+												if (mysqli_num_rows($result) > 0) {
+													$currentKota = '';
+													while ($row = mysqli_fetch_assoc($result)) {
+														$kota = $row['kota'];
+														$kontingen = $row['nama_kontingen'];
+
+														if ($kota !== $currentKota) {
+															if ($currentKota !== '') {
+																echo "</optgroup>";
 															}
-															echo "</optgroup>";
+															echo "<optgroup label='$kota'>";
 														}
-													?>
-												</select>
-											</div>
+
+														echo "<option value='$kontingen'>$kontingen</option>";
+
+														$currentKota = $kota;
+													}
+													echo "</optgroup>";
+												}
+												?>
+											</select>
+										</div>
 									</div>
 								</div>
 
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-6 mb-4">
+										<h6>History Pertandingan</h6>
+										<td>
+											<select name="history" id="history" class="input selectpicker form-control">
+												<option value="" selected="true" disabled="disabled">Pilih History Pertandingan</option>
+												<option value="4">Prestasi Internasional/Nasional</option>
+												<option value="3">Provinsi</option>
+												<option value="2">Kota/Kab/Kec</option>
+												<option value="1">Junior Fighter</option>
+											</select>
+										</td>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-6 mb-3">
 										<div class="form-group">
 											<input type="password" name="password" id="password" class="input form-control" placeholder="Password">
 										</div>
 									</div>
-									<div class="col-md-6">
+									<div class="col-md-6 mb-3">
 										<div class="form-group">
 											<input type="password" name="konfirmasi_password" id="konfirmasi_password" class="input form-control" placeholder="Konfirmasi Password">
 										</div>
@@ -196,10 +204,12 @@ $carikelas = mysqli_query($koneksi, $sqlkelastanding);
 		</div>
 	</div>
 	<div id="footer">
-		<p> </p>
 		<!-- end: footer -->
 	</div>
 
+	<script type="text/javascript" src="js/jquery.bracket-world.min.js"></script>
+	<link href="css/jquery.bracket-world.css" rel="stylesheet" type="text/css" media="all" />
+	
 </body>
 
 </html>
@@ -252,5 +262,10 @@ $carikelas = mysqli_query($koneksi, $sqlkelastanding);
 	.selectpicker {
 		border: 1px solid #ccc;
 		padding: 10px;
+	}
+
+	#golongan, #kategori_tanding {
+		border-radius: 3px;
+		height: 45px;
 	}
 </style>

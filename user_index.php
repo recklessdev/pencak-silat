@@ -59,7 +59,7 @@ include "backend/includes/connection.php";
 					<div class="card-body">
 						DASHBOARD
 						<hr>
-						Selamat Datang <b><?php echo $data['nm_lengkap']; ?></b>
+						Selamat Datang <b><?php echo ucfirst($data['nm_lengkap']); ?></b>
 					</div>
 				</div>
 			</div>

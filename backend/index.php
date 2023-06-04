@@ -37,9 +37,8 @@
 						<th>No</th>
 						<th>Nama</th>
 						<th>Jen.Kelamin</th>
-						<th>TB</th>
-						<th>BB</th>
-						<th>Keterangan</th>
+						<th>Tinggi Badan</th>
+						<th>Berat Badan</th>
 						<th>Kontingen</th>
 						<th>Kelas Tanding</th>
 						<th>Golongan</th>
@@ -55,13 +54,6 @@
 						<td><?php echo $peserta['jenis_kelamin']; ?></td>
 						<td><?php echo $peserta['tb']; ?></td>
 						<td><?php echo $peserta['bb']; ?></td>
-						<td>
-							<?php 
-							echo $peserta['asal_sekolah'];
-							if($peserta['asal_sekolah']<>'') { echo ", Kelas ";}
-					 			echo $peserta['kelas'];
-							?>
-						</td>
 						<td><?php echo $peserta['kontingen']; ?></td>
 						<td><?php echo $peserta['nm_kelastanding']; ?></td>
 						<td><?php echo $peserta['golongan']; ?></td>
@@ -94,7 +86,7 @@
 	</div><!--/span-->		
 </div><!--/row-->
 
-<div class="row-fluid sortable">
+<!-- <div class="row-fluid sortable">
 	<div class="box span12">
 		<div class="box-header" data-original-title>
 			<h2><i class="halflings-icon white user"></i><span class="break"></span>Data Pendaftar TGR</h2>
@@ -162,8 +154,8 @@
 			</table>
 			Pendaftar TGR yang telah lunas/terverifikasi datanya ialah sebanyak <?php echo $paidtgr; ?> dari <?php echo $notgr; ?>.            
 		</div>
-	</div><!--/span-->		
-</div><!--/row-->
+	</div>		
+</div> -->
 
 <div class="row-fluid sortable">
 	<div class="box span12">

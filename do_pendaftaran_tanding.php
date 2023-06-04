@@ -15,6 +15,7 @@
 	$role = mysqli_real_escape_string($koneksi, $_POST["role"]);
 	$email = mysqli_real_escape_string($koneksi, $_POST["email"]);
 	$password = mysqli_real_escape_string($koneksi, md5($_POST["password"]));
+	$history = mysqli_real_escape_string($koneksi, $_POST["history$history"]);
 
 	$asal_sekolah = mysqli_real_escape_string($koneksi, $_POST["asal_sekolah"]);
 	$kelas = mysqli_real_escape_string($koneksi, $_POST["kelas"]);
@@ -33,7 +34,8 @@
 	if($nama == '' OR $jenis_kelamin == "" OR $tpt_lahir == "" OR $tgl_lahir == "" 
 		OR $tb == "" OR $bb == ""
 		OR $kategori_tanding == '' OR $golongan == ''
-		OR $kontingen == "" OR $role == "" OR $email == "" OR $password == "") {
+		OR $kontingen == "" OR $role == "" OR $email == "" OR $password == ""
+		OR $history == "") {
 		?>
 		<script type="text/javascript">
 			alert('Gagal! Data masih ada yang kosong.');
@@ -43,106 +45,227 @@
 		exit;
 	}
 
-
-	// <option value="">Pilih Kelas Tanding</option>
-	// <option value="1">Kelas A</option>
-	// <option value="2">Kelas B</option>
-	// <option value="3">Kelas C</option>
-	// <option value="4">Kelas D</option>
-	// <option value="5">Kelas E</option>
-	// <option value="6">Kelas F</option>
-	// <option value="7">Kelas G</option>
-	// <option value="8">Kelas H</option>
-	// <option value="9">Kelas I</option>
-	// <option value="10">Kelas J</option>
-
 	// ************ HANDLE PEMILIHAN KELAS ******************
-	if($golongan=='Remaja')
+	if($golongan=='Remaja' AND $jenis_kelamin == 'Laki-laki')
 	{
-		if($bb >= '39' && $bb <= '43')
+		if($tb >= '157' && $bb <= '59')
 		{
 			$kelas_tanding = '1';
 		}
-		else if($bb >= '43' && $bb <= '47')
+		else if($tb >= '160' && $bb <= '60')
 		{
 			$kelas_tanding = '2';
 		}
-		else if($bb >= '47' && $bb <= '51')
+		else if($tb >= '162' && $bb <= '62')
 		{
 			$kelas_tanding = '3';
 		}
-		else if($bb >= '51' && $bb <= '55')
+		else if($tb >= '165' && $bb <= '63')
 		{
 			$kelas_tanding = '4';
 		}
-		else if($bb >= '55' && $bb <= '59')
+		else if($tb >= '168' && $bb <= '69')
 		{
 			$kelas_tanding = '5';
 		}
-		else if($bb >= '59' && $bb <= '63')
+		else if($tb >= '170' && $bb <= '67')
 		{
 			$kelas_tanding = '6';
 		}
-		else if($bb >= '63' && $bb <= '67')
+		else if($tb >= '173' && $bb <= '69')
 		{
 			$kelas_tanding = '7';
 		}
-		else if($bb >= '67' && $bb <= '71')
+		else if($tb >= '175' && $bb <= '71')
 		{
 			$kelas_tanding = '8';
 		}
-		else if($bb >= '71' && $bb <= '75')
+		else if($btbb >= '178' && $bb <= '73')
 		{
 			$kelas_tanding = '9';
 		}
-		else if($bb >= '75' && $bb <= '79')
+		else if($tb >= '180' && $bb <= '75')
 		{
 			$kelas_tanding = '10';
+		}
+		else 
+		{
+			?>
+      <script type="text/javascript">
+        alert('Gagal! Anda tidak masuk kualifikasi pendaftaran.');
+        document.location='pendaftaran.php';
+      </script>
+    	<?php
 		}
 	} 
-	else
+	else if($golongan=='Remaja' AND $jenis_kelamin == 'Perempuan')
 	{
-		if($bb >= '45' && $bb <= '50')
+		if($tb >= '147' && $bb <= '45')
 		{
 			$kelas_tanding = '1';
 		}
-		else if($bb >= '50' && $bb <= '55')
+		else if($tb >= '150' && $bb <= '50')
 		{
 			$kelas_tanding = '2';
 		}
-		else if($bb >= '55' && $bb <= '60')
+		else if($tb >= '152' && $bb <= '51')
 		{
 			$kelas_tanding = '3';
 		}
-		else if($bb >= '60' && $bb <= '65')
+		else if($tb >= '153' && $bb <= '53')
 		{
 			$kelas_tanding = '4';
 		}
-		else if($bb >= '65' && $bb <= '70')
+		else if($tb >= '157' && $bb <= '54')
 		{
 			$kelas_tanding = '5';
 		}
-		else if($bb >= '70' && $bb <= '75')
+		else if($tb >= '160' && $bb <= '56')
 		{
 			$kelas_tanding = '6';
 		}
-		else if($bb >= '75' && $bb <= '80')
+		else if($tb >= '162' && $bb <= '57')
 		{
 			$kelas_tanding = '7';
 		}
-		else if($bb >= '80' && $bb <= '85')
+		else if($tb >= '166' && $bb <= '58')
 		{
 			$kelas_tanding = '8';
 		}
-		else if($bb >= '85' && $bb <= '90')
+		else if($btbb >= '168' && $bb <= '61')
 		{
 			$kelas_tanding = '9';
 		}
-		else if($bb >= '90' && $bb <= '95')
+		else if($tb >= '170' && $bb <= '63')
 		{
 			$kelas_tanding = '10';
 		}
+		else 
+		{
+			?>
+      <script type="text/javascript">
+        alert('Gagal! Anda tidak masuk kualifikasi pendaftaran.');
+        document.location='pendaftaran.php';
+      </script>
+    	<?php
+		}
+	} 
+	else if($golongan=='Dewasa' AND $jenis_kelamin == 'Laki-laki')
+	{
+		if($tb >= '165' && $bb <= '60')
+		{
+			$kelas_tanding = '1';
+		}
+		else if($tb >= '170' && $bb <= '65')
+		{
+			$kelas_tanding = '2';
+		}
+		else if($tb >= '175' && $bb <= '70')
+		{
+			$kelas_tanding = '3';
+		}
+		else if($tb >= '178' && $bb <= '73')
+		{
+			$kelas_tanding = '4';
+		}
+		else if($tb >= '180' && $bb <= '75')
+		{
+			$kelas_tanding = '5';
+		}
+		else if($tb >= '183' && $bb <= '70') 
+		{
+			$kelas_tanding = '6';
+		}
+		else if($tb >= '185' && $bb <= '68')
+		{
+			$kelas_tanding = '7';
+		}
+		else if($tb >= '188' && $bb <= '73')
+		{
+			$kelas_tanding = '8';
+		}
+		else if($tb >= '190' && $bb <= '85')
+		{
+			$kelas_tanding = '9';
+		}
+		else if($tb >= '195' && $bb <= '90')
+		{
+			$kelas_tanding = '10';
+		}
+		else 
+		{
+			?>
+      <script type="text/javascript">
+        alert('Gagal! Anda tidak masuk kualifikasi pendaftaran.');
+        document.location='pendaftaran.php';
+      </script>
+    	<?php
+		}
+	} 
+	else if($golongan=='Dewasa' AND $jenis_kelamin == 'Perempuan')
+	{
+		if($tb >= '155' && $bb <= '50')
+		{
+			$kelas_tanding = '1';
+		}
+		else if($tb >= '160' && $bb <= '55')
+		{
+			$kelas_tanding = '2';
+		}
+		else if($tb >= '162' && $bb <= '58')
+		{
+			$kelas_tanding = '3';
+		}
+		else if($tb >= '165' && $bb <= '60')
+		{
+			$kelas_tanding = '4';
+		}
+		else if($tb >= '168' && $bb <= '63')
+		{
+			$kelas_tanding = '5';
+		}
+		else if($tb >= '170' && $bb <= '65')
+		{
+			$kelas_tanding = '6';
+		}
+		else if($tb >= '173' && $bb <= '68')
+		{
+			$kelas_tanding = '7';
+		}
+		else if($tb >= '175' && $bb <= '70')
+		{
+			$kelas_tanding = '8';
+		}
+		else if($tb >= '178' && $bb <= '73')
+		{
+			$kelas_tanding = '9';
+		}
+		else if($tb >= '180' && $bb <= '75')
+		{
+			$kelas_tanding = '10';
+		}
+		else
+		{
+			?>
+      <script type="text/javascript">
+        alert('Gagal! Anda tidak masuk kualifikasi pendaftaran.');
+        document.location='pendaftaran.php';
+      </script>
+    	<?php
+		}
 	}
+	else
+	{
+		?>
+      <script type="text/javascript">
+        alert('Klasifikasi yang anda masukkan tidak terdaftar.');
+        document.location='pendaftaran.php';
+      </script>
+    	<?php
+	}
+// *******************************************
+
+
 	// ************ HANDLE FOTO UPLOAD FOTO ******************
 	//kode upload
 		$lokasi_file_foto = $_FILES['fotopeserta']['tmp_name'];
@@ -378,14 +501,14 @@
 														kategori_tanding, golongan,
 														kelas_tanding_FK, kontingen, 
 														foto, ktp, akta_lahir, ijazah, 
-														role, email, password)
+														role, email, password, history)
 								VALUES('$nama', '$jenis_kelamin', '$tpt_lahir', '$tgl_lahir',
 										'$tb', '$bb', '$kelas', '$asal_sekolah',
 										'$kategori_tanding','$golongan',
 										'$kelas_tanding', '$kontingen', 
 										'$nama_baru_md5_foto', '$nama_baru_md5_ktp',
 										'$nama_baru_md5_akta', '$nama_baru_md5_ijazah',
-										'$role', '$email', '$password')");
+										'$role', '$email', '$password', '$history')");
 	?>
 			<script type="text/javascript">
 				alert('Data berhasil diinput!');

@@ -1,21 +1,21 @@
 <?php
-	require_once("functions/function.php");
-	get_header();
-	get_sidebar();
-	get_bread();
+require_once("functions/function.php");
+get_header();
+get_sidebar();
+get_bread();
 
-	include 'includes/connection.php';
+include 'includes/connection.php';
 
-	//cari data kelas tanding
-	$sqlkelastanding = "SELECT * FROM kelastanding";
-	$carikelastanding = mysqli_query($koneksi,$sqlkelastanding);
+//cari data kelas tanding
+$sqlkelastanding = "SELECT * FROM kelastanding";
+$carikelastanding = mysqli_query($koneksi, $sqlkelastanding);
 
-	//cari pengundian data
-	$sqlhasilundian = "SELECT * FROM undian 
+//cari pengundian data
+$sqlhasilundian = "SELECT * FROM undian 
 						INNER JOIN peserta ON peserta.ID_peserta=undian.id_peserta 
 						INNER JOIN kelastanding ON peserta.kelas_tanding_FK=kelastanding.ID_kelastanding
 						ORDER BY undian.id_undian DESC";
-	$carihasilundian = mysqli_query($koneksi,$sqlhasilundian);
+$carihasilundian = mysqli_query($koneksi, $sqlhasilundian);
 ?>
 <link href="css/spinner.css" rel="stylesheet" type="text/css" media="all" />
 
@@ -37,8 +37,6 @@
 						<td>
 							<select class="form-control" name="golongan" id="golongan">
 								<option value="">-- Pilih Golongan --</option>
-								<option value="Usia Dini">Usia Dini</option>
-								<option value="Pra Remaja">Pra Remaja</option>
 								<option value="Remaja">Remaja</option>
 								<option value="Dewasa">Dewasa</option>
 							</select>
@@ -53,9 +51,18 @@
 						<td>
 							<select name="kelas_tanding" id="kelas_tanding">
 								<option value="">--- Pilih Kelas Tanding ---</option>
-								<?php while($kelastanding = mysqli_fetch_array($carikelastanding)) { ?>
-								<option value="<?php echo $kelastanding[0]; ?>"><?php echo $kelastanding[1]; ?></option>
+								<?php while ($kelastanding = mysqli_fetch_array($carikelastanding)) { ?>
+									<option value="<?php echo $kelastanding[0]; ?>"><?php echo $kelastanding[1]; ?></option>
 								<?php } ?>
+							</select>
+						</td>
+						<td>
+							<select name="history" id="history">
+								<option value="">--- Pilih History ---</option>
+								<option value="4">Prestasi Internasional/Nasional</option>
+								<option value="3">Provinsi</option>
+								<option value="2">Kota/Kab/Kec</option>
+								<option value="1">Junior Fighter</option>
 							</select>
 						</td>
 						<td><input type="submit" class="btn btn-info" name="kocok" value="SHUFFLE"></td>
@@ -63,20 +70,20 @@
 				</table>
 			</form>
 		</div>
-	</div><!--/span-->		
+	</div><!--/span-->
 </div><!--/row-->
 
-<div id="spinner" style="visibility: hidden;"class="spinner">
+<div id="spinner" style="visibility: hidden;" class="spinner">
 	<h1>...Mengundi Peserta...</h1>
 	<div class="bounce1"></div>
-	<div class="bounce2"></div> 
+	<div class="bounce2"></div>
 	<div class="bounce3"></div>
 </div>
 
 <script type="text/javascript">
 	$('#UndianPeserta').submit(function() {
-	    $('#spinner').css('visibility', 'visible');
-	    return true;
+		$('#spinner').css('visibility', 'visible');
+		return true;
 	});
 </script>
 
@@ -105,29 +112,35 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php $no=0; while($hasilundian = mysqli_fetch_array($carihasilundian)) { $no++ ; ?>
-					<tr>
-						<td><?php echo $no; ?></td>
-						<td><?php echo $hasilundian['nm_lengkap']; ?></td>
-						<td><?php echo $hasilundian['golongan']; ?></td>
-						<td>
-							<?php echo $hasilundian['nm_kelastanding']; 
-								if($hasilundian['jenis_kelamin']=='Laki-laki') { echo " Putra"; } else { echo " Putri" ;}
-							?>
-						</td>
-						<td><?php echo $hasilundian['kontingen']; ?></td>
-						<td><?php echo $hasilundian['no_undian']; ?></td>
-						<td class="center">
-							<a class="btn btn-danger" onclick="return confirmDel()" href="admin_do_del_undian.php?id_undian=<?php echo $hasilundian['id_undian']; ?>">
-								<i class="halflings-icon white trash"></i>  
-							</a>
-						</td>
-					</tr>
+					<?php $no = 0;
+					while ($hasilundian = mysqli_fetch_array($carihasilundian)) {
+						$no++; ?>
+						<tr>
+							<td><?php echo $no; ?></td>
+							<td><?php echo $hasilundian['nm_lengkap']; ?></td>
+							<td><?php echo $hasilundian['golongan']; ?></td>
+							<td>
+								<?php echo $hasilundian['nm_kelastanding'];
+								if ($hasilundian['jenis_kelamin'] == 'Laki-laki') {
+									echo " Putra";
+								} else {
+									echo " Putri";
+								}
+								?>
+							</td>
+							<td><?php echo $hasilundian['kontingen']; ?></td>
+							<td><?php echo $hasilundian['no_undian']; ?></td>
+							<td class="center">
+								<a class="btn btn-danger" onclick="return confirmDel()" href="admin_do_del_undian.php?id_undian=<?php echo $hasilundian['id_undian']; ?>">
+									<i class="halflings-icon white trash"></i>
+								</a>
+							</td>
+						</tr>
 					<?php } ?>
 				</tbody>
-			</table>         
+			</table>
 		</div>
-	</div><!--/span-->		
+	</div><!--/span-->
 </div><!--/row-->
 
 <div class="row-fluid sortable">
@@ -147,9 +160,9 @@
 				<input type="submit" onclick="return confirmDel()" class="btn btn-danger" value="HAPUS SEMUA">
 			</form>
 		</div>
-	</div><!--/span-->		
+	</div><!--/span-->
 </div><!--/row-->
 
 <?php
-	get_footer();
+get_footer();
 ?>

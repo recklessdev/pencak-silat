@@ -12,7 +12,7 @@
 					<a class="dropmenu" href="#"><i class="icon-gift"></i><span class="hidden-tablet"> Pengundian</span></a>
 					<ul>
 						<li><a class="submenu" href="admin_undian_tanding.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Tanding</span></a></li>
-						<li><a class="submenu" href="admin_undian_tgr.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> TGR</span></a></li>
+						<!-- <li><a class="submenu" href="admin_undian_tgr.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> TGR</span></a></li> -->
 					</ul>
 				</li>
 				<li><a href="admin_bagan.php" target="_blank"><i class="icon-bullhorn"></i><span class="hidden-tablet"> Bagan Tanding</span></a></li>
@@ -21,7 +21,7 @@
 					<a class="dropmenu" href="#"><i class="icon-th-large"></i><span class="hidden-tablet"> Jadwal Partai</span></a>
 					<ul>
 						<li><a class="submenu" href="jadwal_partai_tanding.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Tanding</span></a></li>
-						<li><a class="submenu" href="jadwal_partai_tgr.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> TGR</span></a></li>
+						<!-- <li><a class="submenu" href="jadwal_partai_tgr.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> TGR</span></a></li> -->
 					</ul>
 				</li>
 				<li><a href="cetak_jadwal.php"><i class="icon-print"></i><span class="hidden-tablet"> Cetak Jadwal</span></a></li>
@@ -29,7 +29,7 @@
 					<a class="dropmenu" href="#"><i class="icon-print"></i><span class="hidden-tablet"> Cetak Form Nilai</span></a>
 					<ul>
 						<li><a class="submenu" href="form_nilai_tanding.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Tanding</span></a></li>
-						<li><a class="submenu" href="form_nilai_tgr.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> TGR</span></a></li>
+						<!-- <li><a class="submenu" href="form_nilai_tgr.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> TGR</span></a></li> -->
 					</ul>
 				</li>
 				<li><a href="admin_medali.php"><i class="icon-star"></i><span class="hidden-tablet"> Perolehan Medali</span></a></li>

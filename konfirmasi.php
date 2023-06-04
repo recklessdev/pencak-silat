@@ -108,14 +108,14 @@ while ($data = mysqli_fetch_array($kueri)) {
 									<label for="bank-tujuan">Bank Tujuan</label>
 									<select name="banktujuan" id="banktujuan" class="form-control">
 										<option value="">Pilih Bank Tujuan</option>
-										<option value="0808 0883 26542 - Bank BCA - A/N Fajar">0808 0883 26542 - Bank ABC - A/N Fajar </option>
-										<option value="0809 7898 09981 - Bank Mandiri - A/N Fajar">0809 7898 09981 - Bank ACC - A/N Fajar </option>
+										<option value="0808 0883 26542 - Bank ABC - A/N Fajar">0808 0883 26542 - Bank BCA - A/N Fajar </option>
+										<option value="0809 7898 09981 - Bank MANDIRI - A/N Fajar">0809 7898 09981 - Bank MANDIRI - A/N Fajar </option>
 									</select>
 								</div>
 
 								<div class="form-group mb-4">
 									<label for="bank-pengirim">Bank Pengirim</label>
-									<select name="bankpengirimm" id="bankpengirim" class="form-control">
+									<select name="bankpengirim" id="bankpengirim" class="form-control">
 										<option value="">Pilih Bank Pengirim</option>
 										<option value="BCA">BCA</option>
 										<option value="BNI">BNI</option>
@@ -131,12 +131,12 @@ while ($data = mysqli_fetch_array($kueri)) {
 
 								<div class="form-group mb-4">
 									<label>Nama Pengirim</label>
-									<input type="text" name="nama-pengirim" id="nama-pengirim" maxlength="35" class="form-control">
+									<input type="text" name="nama" id="nama" maxlength="35" class="form-control">
 								</div>
 
 								<div class="form-group mb-4">
 									<label>Nomor Hp</label>
-									<input type="text" name="noHp" id="noHp" maxlength="35" class="form-control">
+									<input type="text" name="kontak" id="kontak" maxlength="35" class="form-control">
 								</div>
 
 								<div class="form-group mb-4">

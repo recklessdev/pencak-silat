@@ -10,12 +10,13 @@ include('includes/connection.php');
 $golongan = mysqli_real_escape_string($koneksi, $_POST["golongan"]);
 $jenis_kelamin = mysqli_real_escape_string($koneksi, $_POST["jenis_kelamin"]);
 $kelas_tanding = mysqli_real_escape_string($koneksi, $_POST["kelas_tanding"]);
+$history = mysqli_real_escape_string($koneksi, $_POST["history"]);
 
 //Tidur dulu ah 5 detik
 sleep(5);
 
-//CEK APABILA VARIABEL KOSONG = DITOLAK
-if($golongan == '' OR $jenis_kelamin == '' OR $kelas_tanding == '') {
+//CEK APABILA VARIABEL KOSONG = DITOLAKshuffle
+if($golongan == '' OR $jenis_kelamin == '' OR $kelas_tanding == '' OR $history == '') {
 		?>
 		<script type="text/javascript">
 			alert('GAGAL. Filter Data Tidak Lengkap!');
@@ -30,7 +31,9 @@ if($golongan == '' OR $jenis_kelamin == '' OR $kelas_tanding == '') {
 						INNER JOIN peserta ON undian.id_peserta=peserta.ID_peserta
 						WHERE golongan = '$golongan' 
 						AND jenis_kelamin = '$jenis_kelamin'
-						AND kelas_tanding_FK = '$kelas_tanding'";
+						AND kelas_tanding_FK = '$kelas_tanding'
+						AND history = '$history'";
+						
 	$caripeserta = mysqli_query($koneksi,$sqlcaripeserta);
 	
 	while($peserta = mysqli_fetch_array($caripeserta)) {
@@ -51,6 +54,7 @@ if($golongan == '' OR $jenis_kelamin == '' OR $kelas_tanding == '') {
 					WHERE golongan = '$golongan' 
 					AND jenis_kelamin = '$jenis_kelamin'
 					AND kelas_tanding_FK = '$kelas_tanding' 
+					AND history = '$history' 
 					AND status = 'PAID' ";
 	$countputraA = mysqli_query($koneksi,$sqlcountputraA);
 	$jumlahputraA = mysqli_num_rows($countputraA);	
@@ -76,6 +80,7 @@ if($golongan == '' OR $jenis_kelamin == '' OR $kelas_tanding == '') {
 						WHERE golongan = '$golongan' 
 						AND jenis_kelamin = '$jenis_kelamin'
 						AND kelas_tanding_FK = '$kelas_tanding'
+						AND history = '$history'
 						AND status = 'PAID'
 						ORDER BY ID_peserta ASC";
 	$pesertaAputra = mysqli_query($koneksi,$sqlpesertaAputra);

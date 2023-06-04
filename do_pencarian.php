@@ -1,29 +1,4 @@
 <?php 
-	/*
-	*---------------------------------------------------------------
-	* E-REGISTRASI PENCAK SILAT
-	*---------------------------------------------------------------
-	* This program is free software; you can redistribute it and/or
-	* modify it under the terms of the GNU General Public License
-	* as published by the Free Software Foundation; either version 2
-	* of the License, or (at your option) any later version.
-	*
-	* This program is distributed in the hope that it will be useful,
-	* but WITHOUT ANY WARRANTY; without even the implied warranty of
-	* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-	* GNU General Public License for more details.
-	*
-	* You should have received a copy of the GNU General Public License
-	* along with this program; if not, write to the Free Software
-	* Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
-	*
-	* @Author Yudha Yogasara
-	* yudha.yogasara@gmail.com
-	* @Contributor Sofyan Hadi, Satria Salam
-	*
-	* IPSI KABUPATEN TANGERANG
-	* SALAM OLAHRAGA
-	*/
 	include "backend/includes/connection.php";
 
 	$nama = mysqli_real_escape_string($koneksi, $_POST["nama"]);
@@ -70,7 +45,9 @@
   ?>
 
 <h1>Hasil Pencarian Data Peserta Tanding</h1>
-<div class="non-printable"><button onclick="window.print()">Cetak Halaman</button></div>
+<div class="non-printable mb-4">
+	<button onclick="window.print()">Cetak Halaman</button>
+</div>
 	
 	<style style="text/css">
 	@media print
@@ -88,7 +65,6 @@
 			<td>Jenis Kelamin</td>
 			<td>Tinggi Badan</td>
 			<td>Berat Badan</td>
-			<td>Keterangan</td>
 			<td>Kontingen</td>
 			<td>Kelas Tanding</td>
 			<td>Golongan</td>
@@ -101,10 +77,6 @@
 			<td><?php echo $peserta['jenis_kelamin']; ?></td>
 			<td><?php echo $peserta['tb']; ?></td>
 			<td><?php echo $peserta['bb']; ?></td>
-			<td><?php echo $peserta['asal_sekolah'];
-						if($peserta['asal_sekolah']<>'') { echo ", Kelas ";}
-					  echo $peserta['kelas']; ?>
-			</td>
 			<td><?php echo $peserta['kontingen']; ?></td>
 			<td><?php echo $peserta['nm_kelastanding']; ?></td>
 			<td><?php echo $peserta['golongan']; ?></td>

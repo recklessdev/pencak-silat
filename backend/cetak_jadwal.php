@@ -40,7 +40,7 @@
 				</div><!--/span-->
 			</div><!--/row-->
 
-			<div class="row-fluid sortable">		
+			<!-- <div class="row-fluid sortable">		
 				<div class="box span12">
 					<div class="box-header" data-original-title>
 						<h2><i class="halflings-icon white download"></i><span class="break"></span>Cetak Jadwal TGR</h2>
@@ -67,8 +67,8 @@
 							</tr>
 						</form>
 					</div>
-				</div><!--/span-->
-			</div><!--/row-->
+				</div>
+			</div> -->
 <?php
 	get_footer();
 ?>

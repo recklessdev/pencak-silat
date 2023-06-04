@@ -24,8 +24,6 @@
 									<td>
 										<select class="form-control" name="golongan" id="golongan">
 											<option value="">-- Pilih Golongan --</option>
-											<option value="Usia Dini">Usia Dini</option>
-											<option value="Pra Remaja">Pra Remaja</option>
 											<option value="Remaja">Remaja</option>
 											<option value="Dewasa">Dewasa</option>
 										</select>
@@ -38,7 +36,7 @@
 				</div><!--/span-->
 			</div><!--/row-->
 
-			<div class="row-fluid sortable">		
+			<!-- <div class="row-fluid sortable">		
 				<div class="box span12">
 					<div class="box-header" data-original-title>
 						<h2><i class="halflings-icon white download"></i><span class="break"></span>Rekap Data Peserta TGR</h2>
@@ -74,8 +72,8 @@
 							</table>
 						</form>
 					</div>
-				</div><!--/span-->
-			</div><!--/row-->
+				</div>
+			</div> -->
 <?php
 	get_footer();
 ?>

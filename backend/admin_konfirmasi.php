@@ -29,7 +29,7 @@
 						<th>Bank Tujuan</th>
 						<th>Bank Asal</th>
 						<th>Nama Pengirim</th>
-						<th>Tgl TRF</th>
+						<th>Tanggal Tranfser</th>
 						<th>Jumlah</th>
 						<th>Status</th>
 						<th>Actions</th>

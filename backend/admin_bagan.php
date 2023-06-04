@@ -29,8 +29,6 @@
 		<td>
 			<select name="golongan" id="golongan">
 				<option value="">--- Pilih Golongan ---</option>
-				<option value="Usia Dini">Usia Dini</option>
-				<option value="Pra Remaja">Pra Remaja</option>
 				<option value="Remaja">Remaja</option>
 				<option value="Dewasa">Dewasa</option>
 			</select>
@@ -68,11 +66,6 @@
     	.printable { display: block; }
     }
 	</style>
-
-<div id="footer">
-	<p>&copy; 2016 <?php echo " - ".date("Y"); ?> IPSI Kabupaten Tangerang </p>
-	<!-- end: footer -->
-</div>
 
 <script type="text/javascript" src="js/jquery.bracket-world.min.js"></script>
 	<link href="css/jquery.bracket-world.css" rel="stylesheet" type="text/css" media="all" />
