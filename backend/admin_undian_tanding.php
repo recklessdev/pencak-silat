@@ -63,6 +63,7 @@ $carihasilundian = mysqli_query($koneksi, $sqlhasilundian);
 								<option value="3">Provinsi</option>
 								<option value="2">Kota/Kab/Kec</option>
 								<option value="1">Junior Fighter</option>
+								<option value="0">General</option>
 							</select>
 						</td>
 						<td><input type="submit" class="btn btn-info" name="kocok" value="SHUFFLE"></td>
