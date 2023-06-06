@@ -194,7 +194,7 @@
 									<p>Tomato / Eggs / Sausage</p>
 								</div>
 								<div class="menu-price">
-									<span>$25</span>
+									<!-- <span>$25</span> -->
 								</div>
 							</div>
 						</a>
@@ -213,7 +213,7 @@
 									<p>Green / Fruits / Healthy</p>
 								</div>
 								<div class="menu-price">
-									<span>$18</span>
+									<!-- <span>$18</span> -->
 								</div>
 							</div>
 						</a>
@@ -232,7 +232,7 @@
 									<p>Pepper / Chicken / Vegetables</p>
 								</div>
 								<div class="menu-price">
-									<span>$34</span>
+									<!-- <span>$34</span> -->
 								</div>
 							</div>
 						</a>
@@ -251,7 +251,7 @@
 									<p>Green / Chicken</p>
 								</div>
 								<div class="menu-price">
-									<span>$28</span>
+									<!-- <span>$28</span> -->
 								</div>
 							</div>
 						</a>
@@ -270,7 +270,7 @@
 									<p>Beef / Fried Potatoes</p>
 								</div>
 								<div class="menu-price">
-									<span>$46</span>
+									<!-- <span>$46</span> -->
 								</div>
 							</div>
 						</a>
@@ -289,7 +289,7 @@
 									<p>Pepper / Crispy</p>
 								</div>
 								<div class="menu-price">
-									<span>$30</span>
+									<!-- <span>$30</span> -->
 								</div>
 							</div>
 						</a>

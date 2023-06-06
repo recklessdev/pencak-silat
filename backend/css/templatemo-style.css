@@ -81,10 +81,10 @@ http://www.templatemo.com/tm-515-eatery
     height: 8px;
   }
 
-  ::-webkit-scrollbar-thumb {
+  /* ::-webkit-scrollbar-thumb {
     cursor: pointer;
     background: #000000;
-  }
+  } */
 
   .section-title {
     padding-bottom: 40px;
@@ -115,7 +115,7 @@ http://www.templatemo.com/tm-515-eatery
 
   section {
     position: relative;
-    padding: 100px 0;
+    padding: 6px 0;
   }
 
   #team, 

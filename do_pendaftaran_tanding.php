@@ -46,47 +46,47 @@
 	}
 
 	// ************ HANDLE PEMILIHAN KELAS ******************
-	if($golongan=='Remaja' AND $jenis_kelamin == 'Laki-laki')
+	if($golongan == 'Remaja' AND $jenis_kelamin == 'Laki-laki')
 	{
 		if($tb >= '157' && $bb <= '59')
 		{
-			$kelas_tanding = '1';
+			$kelas_tanding = '1'; // KELAS A
 		}
 		else if($tb >= '160' && $bb <= '60')
 		{
-			$kelas_tanding = '2';
+			$kelas_tanding = '2'; // KELAS B
 		}
 		else if($tb >= '162' && $bb <= '62')
 		{
-			$kelas_tanding = '3';
+			$kelas_tanding = '3'; // KELAS C
 		}
 		else if($tb >= '165' && $bb <= '63')
 		{
-			$kelas_tanding = '4';
+			$kelas_tanding = '4'; // KELAS D
 		}
 		else if($tb >= '168' && $bb <= '69')
 		{
-			$kelas_tanding = '5';
+			$kelas_tanding = '5'; // KELAS E
 		}
 		else if($tb >= '170' && $bb <= '67')
 		{
-			$kelas_tanding = '6';
+			$kelas_tanding = '6'; // KELAS F
 		}
 		else if($tb >= '173' && $bb <= '69')
 		{
-			$kelas_tanding = '7';
+			$kelas_tanding = '7'; // KELAS G
 		}
 		else if($tb >= '175' && $bb <= '71')
 		{
-			$kelas_tanding = '8';
+			$kelas_tanding = '8'; // KELAS H
 		}
 		else if($btbb >= '178' && $bb <= '73')
 		{
-			$kelas_tanding = '9';
+			$kelas_tanding = '9'; // KELAS I
 		}
 		else if($tb >= '180' && $bb <= '75')
 		{
-			$kelas_tanding = '10';
+			$kelas_tanding = '10'; // KELAS J
 		}
 		else 
 		{
