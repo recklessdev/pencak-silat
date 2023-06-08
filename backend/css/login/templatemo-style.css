@@ -114,8 +114,8 @@ http://www.templatemo.com/tm-515-eatery
   }
 
   section {
-    position: fixed;
-    padding: 100px 0;
+    position: relative;
+    padding: 6px 0;
   }
 
   #team, 
