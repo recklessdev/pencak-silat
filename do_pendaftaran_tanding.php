@@ -48,43 +48,43 @@
 	// ************ HANDLE PEMILIHAN KELAS ******************
 	if($golongan == 'Remaja' AND $jenis_kelamin == 'Laki-laki')
 	{
-		if($tb >= '157' && $bb <= '59')
+		if($tb >= '157' && $bb >= '45' && $bb <= '50')
 		{
 			$kelas_tanding = '1'; // KELAS A
 		}
-		else if($tb >= '160' && $bb <= '60')
+		else if($tb >= '160' && $bb >= '50' && $bb <= '55')
 		{
 			$kelas_tanding = '2'; // KELAS B
 		}
-		else if($tb >= '162' && $bb <= '62')
+		else if($tb >= '162' && $bb >= '55' && $bb <= '60')
 		{
 			$kelas_tanding = '3'; // KELAS C
 		}
-		else if($tb >= '165' && $bb <= '63')
+		else if($tb >= '165' && $bb >= '60' && $bb <= '65')
 		{
 			$kelas_tanding = '4'; // KELAS D
 		}
-		else if($tb >= '168' && $bb <= '69')
+		else if($tb >= '168' && $bb >= '65' && $bb <= '70')
 		{
 			$kelas_tanding = '5'; // KELAS E
 		}
-		else if($tb >= '170' && $bb <= '67')
+		else if($tb >= '170' && $bb >= '70' && $bb <= '75')
 		{
 			$kelas_tanding = '6'; // KELAS F
 		}
-		else if($tb >= '173' && $bb <= '69')
+		else if($tb >= '173' && $bb >= '80' && $bb <= '80')
 		{
 			$kelas_tanding = '7'; // KELAS G
 		}
-		else if($tb >= '175' && $bb <= '71')
+		else if($tb >= '175' && $bb >= '85' && $bb <= '85')
 		{
 			$kelas_tanding = '8'; // KELAS H
 		}
-		else if($btbb >= '178' && $bb <= '73')
+		else if($btbb >= '178' && $bb >= '90' && $bb <= '90')
 		{
 			$kelas_tanding = '9'; // KELAS I
 		}
-		else if($tb >= '180' && $bb <= '75')
+		else if($tb >= '180' && $bb >= '45' && $bb <= '95')
 		{
 			$kelas_tanding = '10'; // KELAS J
 		}
@@ -100,45 +100,29 @@
 	} 
 	else if($golongan=='Remaja' AND $jenis_kelamin == 'Perempuan')
 	{
-		if($tb >= '147' && $bb <= '45')
+		if($tb >= '147' && $bb >= '45' && $bb <= '50')
 		{
-			$kelas_tanding = '1';
+			$kelas_tanding = '1'; //KELAS A
 		}
-		else if($tb >= '150' && $bb <= '50')
+		else if($tb >= '150' && $bb >= '50' & $bb <= '55')
 		{
-			$kelas_tanding = '2';
+			$kelas_tanding = '2'; //KELAS B
 		}
-		else if($tb >= '152' && $bb <= '51')
+		else if($tb >= '152' && $bb >= '55' & $bb <= '60')
 		{
-			$kelas_tanding = '3';
+			$kelas_tanding = '3'; //KELAS C
 		}
-		else if($tb >= '153' && $bb <= '53')
+		else if($tb >= '153' && $bb >= '60' & $bb <= '65')
 		{
-			$kelas_tanding = '4';
+			$kelas_tanding = '4'; //KELAS D
 		}
-		else if($tb >= '157' && $bb <= '54')
+		else if($tb >= '157' && $bb >= '65' & $bb <= '70')
 		{
-			$kelas_tanding = '5';
+			$kelas_tanding = '5'; //KELAS E
 		}
-		else if($tb >= '160' && $bb <= '56')
+		else if($tb >= '160' && $bb >= '70' & $bb <= '75')
 		{
-			$kelas_tanding = '6';
-		}
-		else if($tb >= '162' && $bb <= '57')
-		{
-			$kelas_tanding = '7';
-		}
-		else if($tb >= '166' && $bb <= '58')
-		{
-			$kelas_tanding = '8';
-		}
-		else if($btbb >= '168' && $bb <= '61')
-		{
-			$kelas_tanding = '9';
-		}
-		else if($tb >= '170' && $bb <= '63')
-		{
-			$kelas_tanding = '10';
+			$kelas_tanding = '6'; //KELAS F
 		}
 		else 
 		{
@@ -152,43 +136,43 @@
 	} 
 	else if($golongan=='Dewasa' AND $jenis_kelamin == 'Laki-laki')
 	{
-		if($tb >= '165' && $bb <= '60')
+		if($tb >= '165' && $bb >= '45' && $bb <= '50')
 		{
 			$kelas_tanding = '1';
 		}
-		else if($tb >= '170' && $bb <= '65')
+		else if($tb >= '170' && $bb >= '50' && $bb <= '55')
 		{
 			$kelas_tanding = '2';
 		}
-		else if($tb >= '175' && $bb <= '70')
+		else if($tb >= '175' && $bb >= '55' && $bb <= '60')
 		{
 			$kelas_tanding = '3';
 		}
-		else if($tb >= '178' && $bb <= '73')
+		else if($tb >= '178' && $bb >= '60' && $bb <= '65')
 		{
 			$kelas_tanding = '4';
 		}
-		else if($tb >= '180' && $bb <= '75')
+		else if($tb >= '180' && $bb >= '65' && $bb <= '70')
 		{
 			$kelas_tanding = '5';
 		}
-		else if($tb >= '183' && $bb <= '70') 
+		else if($tb >= '183' && $bb >= '70' && $bb <= '75') 
 		{
 			$kelas_tanding = '6';
 		}
-		else if($tb >= '185' && $bb <= '68')
+		else if($tb >= '185' && $bb >= '80' && $bb <= '80')
 		{
 			$kelas_tanding = '7';
 		}
-		else if($tb >= '188' && $bb <= '73')
+		else if($tb >= '188' && $bb >= '85' && $bb <= '85')
 		{
 			$kelas_tanding = '8';
 		}
-		else if($tb >= '190' && $bb <= '85')
+		else if($tb >= '190' && $bb >= '90' && $bb <= '90')
 		{
 			$kelas_tanding = '9';
 		}
-		else if($tb >= '195' && $bb <= '90')
+		else if($tb >= '195' && $bb >= '45' && $bb <= '95')
 		{
 			$kelas_tanding = '10';
 		}
@@ -204,45 +188,29 @@
 	} 
 	else if($golongan=='Dewasa' AND $jenis_kelamin == 'Perempuan')
 	{
-		if($tb >= '155' && $bb <= '50')
+		if($tb >= '155' && $bb >= '45' && $bb <= '50')
 		{
 			$kelas_tanding = '1';
 		}
-		else if($tb >= '160' && $bb <= '55')
+		else if($tb >= '160' && $bb >= '50' & $bb <= '55')
 		{
 			$kelas_tanding = '2';
 		}
-		else if($tb >= '162' && $bb <= '58')
+		else if($tb >= '162' && $bb >= '55' & $bb <= '60')
 		{
 			$kelas_tanding = '3';
 		}
-		else if($tb >= '165' && $bb <= '60')
+		else if($tb >= '165' && $bb >= '60' & $bb <= '65')
 		{
 			$kelas_tanding = '4';
 		}
-		else if($tb >= '168' && $bb <= '63')
+		else if($tb >= '168' && $bb >= '65' & $bb <= '70')
 		{
 			$kelas_tanding = '5';
 		}
-		else if($tb >= '170' && $bb <= '65')
+		else if($tb >= '170' && $bb >= '70' & $bb <= '75')
 		{
 			$kelas_tanding = '6';
-		}
-		else if($tb >= '173' && $bb <= '68')
-		{
-			$kelas_tanding = '7';
-		}
-		else if($tb >= '175' && $bb <= '70')
-		{
-			$kelas_tanding = '8';
-		}
-		else if($tb >= '178' && $bb <= '73')
-		{
-			$kelas_tanding = '9';
-		}
-		else if($tb >= '180' && $bb <= '75')
-		{
-			$kelas_tanding = '10';
 		}
 		else
 		{

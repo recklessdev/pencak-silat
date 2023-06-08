@@ -8,7 +8,7 @@ session_start();
 
 <head>
 
-	<title>Login</title>
+	<title>Sign up</title>
 
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -31,7 +31,6 @@ session_start();
 
 	<!-- Main css -->
 	<link rel="stylesheet" href="css/style.css">
-
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -60,7 +59,7 @@ session_start();
 				</button>
 
 				<!-- lOGO TEXT HERE -->
-				<a href="../index.php" class="navbar-brand" style="color:#333;">Pencak <span>.</span> Silat</a>
+				<a href="index.php" class="navbar-brand" style="color:#333;">Pencak <span>.</span> Silat</a>
 			</div>
 
 			<!-- MENU LINKS -->
@@ -70,14 +69,14 @@ session_start();
 				echo '
 						<div class="collapse navbar-collapse">
 							<ul class="nav navbar-nav navbar-nav-first">
-								<li><a href="../index.php" class="smoothScroll" style="color: #ce3232;">Home</a></li>
-								<li><a href="../index.php" class="smoothScroll" style="color: #ce3232;">Pencarian Data</a></li>
-								<li><a href="../index.php" class="smoothScroll" style="color: #ce3232;">Konfirmasi Pembayaran</a></li>
-								<li><a href="../index.php" class="smoothScroll" style="color: #ce3232;">Bantuan</a></li>
+								<li><a href="index.php" class="smoothScroll" style="color: #ce3232;">Home</a></li>
+								<li><a href="index.php" class="smoothScroll" style="color: #ce3232;">Pencarian Data</a></li>
+								<li><a href="index.php" class="smoothScroll" style="color: #ce3232;">Konfirmasi Pembayaran</a></li>
+								<li><a href="index.php" class="smoothScroll" style="color: #ce3232;">Bantuan</a></li>
 							</ul>
 
 							<ul class="nav navbar-nav navbar-right">
-								<a href="logout.php" class="section-btn">Logout</a>
+								<a href="backend/logout.php" class="section-btn">Logout</a>
 							</ul>
 						</div>
 					';
@@ -92,7 +91,7 @@ session_start();
 							</ul>
 
 							<ul class="nav navbar-nav navbar-right">
-								<a href="login.php" class="section-btn">Login</a>
+								<a href="backend/login.php" class="section-btn">Login</a>
 							</ul>
 						</div>
 					';
@@ -121,12 +120,14 @@ session_start();
 								<label for="email"><i class="zmdi zmdi-email"></i></label>
 								<input type="email" name="email" id="email" placeholder="Email" />
 							</div>
-							<div class="form-group">
-								<div class="form-check form-check-inline">
+							<div class="form-group" style="margin-bottom: 10px;">
+							<label for="name"><i class="zmdi zmdi-male-female"></i></label>
+
+								<div class="form-check form-check-inline" style="display: inline-block; margin-left: 40px;">
 									<input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Laki-laki" checked />
 									<h6 class="form-check-label" for="Laki-laki">Laki-Laki</h6>
 								</div>
-								<div class="form-check form-check-inline">
+								<div class="form-check form-check-inline" style="display: inline-block; margin-left: 40px;">
 									<input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Perempuan">
 									<h6 class="form-check-label" for="Perempuan">Perempuan</h6>
 								</div>
@@ -262,5 +263,13 @@ session_start();
 <style>
 	.select2 {
 		margin-left: 25px;
+	}
+
+	.custom-navbar.navbar-fixed-top {
+		background: #ffffff;
+		-webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+		padding: 12px 0;
 	}
 </style>

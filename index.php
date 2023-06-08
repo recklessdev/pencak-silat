@@ -60,13 +60,15 @@
 						<div class="collapse navbar-collapse">
 							<ul class="nav navbar-nav navbar-nav-first">
 								<li><a href="#home" class="smoothScroll">Home</a></li>
-								<li><a href="#about" class="smoothScroll">Pencarian Data</a></li>
-								<li><a href="#team" class="smoothScroll">Konfirmasi Pembayaran</a></li>
+								<li><a href="#about" class="smoothScroll">Tentang</a></li>
+								<li><a href="#team" class="smoothScroll">Galeri</a></li>
+								<li><a href="pencarian.php" class="smoothScroll">Pencarian Data</a></li>
+								<li><a href="konfirmasi.php" class="smoothScroll">Konfirmasi Pembayaran</a></li>
 								<li><a href="#contact" class="smoothScroll">Bantuan</a></li>
 							</ul>
 
 							<ul class="nav navbar-nav navbar-right">
-								<a href="#footer" class="section-btn">Logout</a>
+								<a href="backend/logout.php" class="section-btn">Logout</a>
 							</ul>
 						</div>
 					';
@@ -102,7 +104,14 @@
 							<div class="col-md-8 col-sm-12">
 								<h3>Tournament Pencak Silat</h3>
 								<h1>Bergabunglah &amp; tunjukkan keterampilan seni bela diri Anda</h1>
-								<a href="#team" class="section-btn btn btn-default smoothScroll">Daftar Sekarang</a>
+								<?php 
+									if (!isset($_SESSION['email'])) 
+									{
+										echo '
+											<a href="pendaftaran.php" class="section-btn btn btn-default smoothScroll">Daftar Sekarang</a>
+										';
+									}
+								?>
 							</div>
 						</div>
 					</div>
@@ -114,7 +123,14 @@
 							<div class="col-md-8 col-sm-12">
 								<h3>Tournament Pencak Silat</h3>
 								<h1>Bergabunglah dalam pertarungan seni bela diri terbaik</h1>
-								<a href="#menu" class="section-btn btn btn-default smoothScroll">Daftar Sekarang</a>
+								<?php 
+									if (!isset($_SESSION['email'])) 
+									{
+										echo '
+											<a href="pendaftaran.php" class="section-btn btn btn-default smoothScroll">Daftar Sekarang</a>
+										';
+									}
+								?>
 							</div>
 						</div>
 					</div>
@@ -126,7 +142,14 @@
 							<div class="col-md-8 col-sm-12">
 								<h3>Tournament Pencak Silat</h3>
 								<h1>Jadilah bagian dari pertarungan epik</h1>
-								<a href="#contact" class="section-btn btn btn-default smoothScroll">Daftar Sekarang</a>
+								<?php 
+									if (!isset($_SESSION['email'])) 
+									{
+										echo '
+											<a href="pendaftaran.php" class="section-btn btn btn-default smoothScroll">Daftar Sekarang</a>
+										';
+									}
+								?>
 							</div>
 						</div>
 					</div>
@@ -190,8 +213,8 @@
 
 							<div class="menu-info">
 								<div class="menu-item">
-									<h3>American Breakfast</h3>
-									<p>Tomato / Eggs / Sausage</p>
+									<h3>Teknik</h3>
+									<p>Teknik Bantingan</p>
 								</div>
 								<div class="menu-price">
 									<!-- <span>$25</span> -->
@@ -209,8 +232,8 @@
 
 							<div class="menu-info">
 								<div class="menu-item">
-									<h3>Self-made Salad</h3>
-									<p>Green / Fruits / Healthy</p>
+									<h3>Teknik</h3>
+									<p>Teknik Bantingan</p>
 								</div>
 								<div class="menu-price">
 									<!-- <span>$18</span> -->
@@ -228,8 +251,8 @@
 
 							<div class="menu-info">
 								<div class="menu-item">
-									<h3>Chinese Noodle</h3>
-									<p>Pepper / Chicken / Vegetables</p>
+									<h3>Teknik</h3>
+									<p>Teknik Bantingan</p>
 								</div>
 								<div class="menu-price">
 									<!-- <span>$34</span> -->
@@ -247,8 +270,8 @@
 
 							<div class="menu-info">
 								<div class="menu-item">
-									<h3>Rice Soup</h3>
-									<p>Green / Chicken</p>
+									<h3>Teknik</h3>
+									<p>Teknik Bantingan</p>
 								</div>
 								<div class="menu-price">
 									<!-- <span>$28</span> -->
@@ -261,13 +284,13 @@
 				<div class="col-md-4 col-sm-6" style="bottom: 220px">
 					<!-- MENU THUMB -->
 					<div class="menu-thumb">
-						<a href="images/galery-image5.jpg" class="image-popup" title="Project title">
+						<a href="images/galery-image5.jpg" class="image-popup" title="Teknik Kuncian">
 							<img src="images/galery-image5.jpg" class="img-responsive" alt="">
 
 							<div class="menu-info">
 								<div class="menu-item">
-									<h3>Deli Burger</h3>
-									<p>Beef / Fried Potatoes</p>
+									<h3>Teknik</h3>
+									<p>Teknik Bantingan</p>
 								</div>
 								<div class="menu-price">
 									<!-- <span>$46</span> -->
@@ -285,8 +308,8 @@
 
 							<div class="menu-info">
 								<div class="menu-item">
-									<h3>Big Flat Fried</h3>
-									<p>Pepper / Crispy</p>
+									<h3>Teknik</h3>
+									<p>Teknik Kuncian</p>
 								</div>
 								<div class="menu-price">
 									<!-- <span>$30</span> -->

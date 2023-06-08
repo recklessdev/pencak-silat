@@ -16,18 +16,24 @@ while ($data = mysqli_fetch_array($kueri)) {
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Konfirmasi Pembayaran Pencak Silat</title>
-	<meta name="description" content="Registrasi Online Kejuaraan Pencak Silat">
-	<meta name="keywords" content="registrasi,online,pencak,silat">
-	<meta name="robots" content="index,follow">
-	<meta name="author" content="Yudha Yogasara">
-	<!-- CSS Files -->
-	<!-- <link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/stylesheet.css" rel="stylesheet" type="text/css" media="all" /> -->
-	<!-- Add Bootstrap -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<script src="js/jquery-1.12.4.js"></script>
-	<script src="js/jquery-ui.js"></script>
+	<title>Konfirmasi Pembayaran</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<!-- MAIN CSS -->
+	<link rel="stylesheet" href="css/templatemo-style.css">
 
 	<script>
 		$(function() {
@@ -78,17 +84,76 @@ while ($data = mysqli_fetch_array($kueri)) {
 </head>
 
 <body>
-	<!-- Start Wrapper -->
-	<?php
-	include "headmenu.php";
-	?>
-	<div class="container-fluid mt-5">
-		<div class="row justify-content-center align-items-center h-100">
-			<div class="col-12 col-lg-9 col-xl-7">
+	<!-- PRE LOADER -->
+	<section class="preloader">
+		<div class="spinner">
+			<span class="spinner-rotate"></span>
+		</div>
+	</section>
+
+	<!-- MENU -->
+	<section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+		<div class="container">
+
+			<div class="navbar-header">
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon icon-bar"></span>
+					<span class="icon icon-bar"></span>
+					<span class="icon icon-bar"></span>
+				</button>
+
+				<!-- lOGO TEXT HERE -->
+				<a href="index.php" class="navbar-brand" style="color: black;">Pencak <span>.</span> Silat</a>
+			</div>
+
+			<!-- MENU LINKS -->
+			<?php
+			session_start();
+
+			if (isset($_SESSION['email'])) {
+				echo '
+						<div class="collapse navbar-collapse">
+							<ul class="nav navbar-nav navbar-nav-first">
+								<li><a href="index.php" class="smoothScroll" style="color: #CE3232">Home</a></li>
+								<li><a href="index.php" class="smoothScroll" style="color: #CE3232">Tentang</a></li>
+								<li><a href="index.php" class="smoothScroll" style="color: #CE3232">Galeri</a></li>
+								<li><a href="pencarian.php" class="smoothScroll" style="color: #CE3232">Pencarian Data</a></li>
+								<li><a href="konfirmasi.php" class="smoothScroll" style="color: #CE3232">Konfirmasi Pembayaran</a></li>
+								<li><a href="index.php" class="smoothScroll" style="color: #CE3232">Bantuan</a></li>
+							</ul>
+
+							<ul class="nav navbar-nav navbar-right">
+								<a href="backend/logout.php" class="section-btn">Logout</a>
+							</ul>
+						</div>
+					';
+			} else {
+				echo '
+						<div class="collapse navbar-collapse">
+							<ul class="nav navbar-nav navbar-nav-first">
+								<li><a href="index.php" class="smoothScroll">Home</a></li>
+								<li><a href="index.php" class="smoothScroll">Tentang</a></li>
+								<li><a href="index.php" class="smoothScroll">Galeri</a></li>
+								<li><a href="index.php" class="smoothScroll">Bantuan</a></li>
+							</ul>
+
+							<ul class="nav navbar-nav navbar-right">
+								<a href="backend/login.php" class="section-btn">Login</a>
+							</ul>
+						</div>
+					';
+			}
+			?>
+		</div>
+	</section>
+
+	<div class="container rounded bg-white mt-5 mb-5" style="margin-top: 150px;">
+		<div class="row">
+			<div class="d-flex justify-content-between align-items-center mb-3">
 				<div class="card border-0 rounded shadow">
 					<div class="card-body p-4 p-md-5">
 						<div class="form">
-							<h2>FORMULIR KONFIRMASI PEMBAYARAN</h2>
+							<h4 class="text-center mb-4">FORMULIR KONFIRMASI PEMBAYARAN</h4>
 							<hr>
 							<p>
 								Setelah melakukan proses pendaftaran, langkah selanjutnya adalah melunasi biaya pendaftaran sejumlah peserta yang telah didaftarkan sebelumnya (Rp. XXX.XXX,-/peserta). Pembayaran dapat ditransfer melalui nomor- nomor rekening dibawah ini :
@@ -163,11 +228,11 @@ while ($data = mysqli_fetch_array($kueri)) {
 									<label>Kode Verifikasi</label>
 									<div class="form-group">
 										<input name="vercode" type="text" id="vercode" size="9" maxlength="5" class="form-control" />
-										<img src="capcay.php" />
+										<img src="capcay.php" style="margin-top: 5px; margin-bottom: 35px;" />
 									</div>
 								</div>
 								<div>
-									<button type="submit" name="konfirmasi" value="KIRIM" class="btn btn-primary col-12">Submit</button>
+									<button type="submit" name="konfirmasi" value="KIRIM" class="btn btn-primary col-12" style="margin-bottom: 50px; background: #CE2322; color: #fff; border-bottom: none; padding: 15px 39px; border-radius: 5px; width: auto">Submit</button>
 								</div>
 								</table>
 							</form>
@@ -177,13 +242,17 @@ while ($data = mysqli_fetch_array($kueri)) {
 			</div>
 		</div>
 	</div>
-	<!-- start: footer -->
-	<div id="footer">
-		<p> </p>
-	</div>
-	<!-- end: footer -->
+
+	<!-- SCRIPTS -->
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/smoothscroll.js"></script>
+	<script src="js/custom.js"></script>
 
 </body>
 
 </html>
-
