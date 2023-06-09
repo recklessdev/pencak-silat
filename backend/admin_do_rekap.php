@@ -13,7 +13,8 @@ $datetime = gmdate("Y-m-d H_i_s", time()+60*60*7);
 
 	//$sort = mysqli_real_escape_string($koneksi, $_POST["sort"]);
 	$golongan = mysqli_real_escape_string($koneksi, $_POST["golongan"]);
-
+	$jenis_kelamin = mysqli_real_escape_string($koneksi, $_POST["jenis_kelamin"]);
+	$kelas_tanding = mysqli_real_escape_string($koneksi, $_POST["kelas_tanding"]);
 
 	//Ragam Sortir Data
 	//peserta.nm_lengkap
@@ -25,6 +26,8 @@ $datetime = gmdate("Y-m-d H_i_s", time()+60*60*7);
 					INNER JOIN kelastanding ON peserta.kelas_tanding_FK=kelastanding.ID_kelastanding
 					WHERE peserta.kategori_tanding='Tanding'
 					AND peserta.golongan LIKE '%$golongan%'
+					AND peserta.jenis_kelamin LIKE '%$jenis_kelamin%'
+					AND peserta.kelas_tanding_FK LIKE '%$kelas_tanding%'
 					ORDER BY peserta.jenis_kelamin,peserta.kelas_tanding_FK,peserta.kontingen ASC";
 	$datapeserta = mysqli_query($koneksi, $sqlpeserta);
 	

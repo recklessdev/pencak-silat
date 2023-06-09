@@ -11,6 +11,7 @@
     $tb                 = $_POST['tb'];
     $bb                 = $_POST['bb'];
     $kontingen          = $_POST['kontingen'];
+    $alamat             = $_POST['alamat'];
 
     // memasukan data
     $sql = "UPDATE peserta SET 
@@ -20,7 +21,8 @@
                   tgl_lahir='$tgl_lahir', 
                   tb='$tb', 
                   bb='$bb',
-                  kontingen='$kontingen'
+                  kontingen='$kontingen',
+                  alamat=$alamat
                 WHERE ID_peserta='$_SESSION[ID_peserta]'";
 
     $result = mysqli_query($koneksi, "$sql");

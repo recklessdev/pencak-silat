@@ -8,6 +8,7 @@
 	$jenis_kelamin = mysqli_real_escape_string($koneksi, $_POST["jenis_kelamin"]);
 	
 	$tpt_lahir = mysqli_real_escape_string($koneksi, $_POST["tpt_lahir"]);
+	$alamat = mysqli_real_escape_string($koneksi, $_POST["alamat"]);
 	$tgl_lahir = mysqli_real_escape_string($koneksi, $_POST["tgl_lahir"]);
 	$tb = mysqli_real_escape_string($koneksi, $_POST["tb"]);
 	$bb = mysqli_real_escape_string($koneksi, $_POST["bb"]);
@@ -35,7 +36,7 @@
 		OR $tb == "" OR $bb == ""
 		OR $kategori_tanding == '' OR $golongan == ''
 		OR $kontingen == "" OR $role == "" OR $email == "" OR $password == ""
-		OR $history == "") {
+		OR $history == "" OR $alamat == "") {
 		?>
 		<script type="text/javascript">
 			alert('Gagal! Data masih ada yang kosong.');
@@ -469,14 +470,14 @@
 														kategori_tanding, golongan,
 														kelas_tanding_FK, kontingen, 
 														foto, ktp, akta_lahir, ijazah, 
-														role, email, password, history)
+														role, email, password, history, alamat)
 								VALUES('$nama', '$jenis_kelamin', '$tpt_lahir', '$tgl_lahir',
 										'$tb', '$bb', '$kelas', '$asal_sekolah',
 										'$kategori_tanding','$golongan',
 										'$kelas_tanding', '$kontingen', 
 										'$nama_baru_md5_foto', '$nama_baru_md5_ktp',
 										'$nama_baru_md5_akta', '$nama_baru_md5_ijazah',
-										'$role', '$email', '$password', '$history')");
+										'$role', '$email', '$password', '$history', '$alamat')");
 	?>
 			<script type="text/javascript">
 				alert('Data berhasil diinput!');

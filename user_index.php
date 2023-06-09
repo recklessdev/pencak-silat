@@ -127,6 +127,10 @@ session_start();
               <input type="text" class="form-control" name="tpt_lahir" value="<?php echo $data['tpt_lahir']; ?>" placeholder="Tempat Lahir">
             </div>
             <div class="form-group col-md-12 mb-4" style="margin-block-end: auto; margin-bottom: 15px">
+              <td><b>Alamat</b></td>
+              <input type="text" class="form-control" name="alamat" value="<?php echo $data['alamat']; ?>" placeholder="Alamat">
+            </div>
+            <div class="form-group col-md-12 mb-4" style="margin-block-end: auto; margin-bottom: 15px">
               <td><b>Tanggal Lahir</b></td>
               <input type="text" class="form-control" name="tgl_lahir" value="<?php echo $data['tgl_lahir']; ?>" placeholder="Tanggal Lahir">
             </div>

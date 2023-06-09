@@ -122,7 +122,6 @@ session_start();
 							</div>
 							<div class="form-group" style="margin-bottom: 10px;">
 							<label for="name"><i class="zmdi zmdi-male-female"></i></label>
-
 								<div class="form-check form-check-inline" style="display: inline-block; margin-left: 40px;">
 									<input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Laki-laki" checked />
 									<h6 class="form-check-label" for="Laki-laki">Laki-Laki</h6>
@@ -135,6 +134,10 @@ session_start();
 							<div class="form-group">
 								<label for="tpt_lahir"><i class="zmdi zmdi-pin"></i></label>
 								<input type="text" name="tpt_lahir" id="tpt_lahir" placeholder="Tempat Lahir" />
+							</div>
+							<div class="form-group">
+								<label for="alamat"><i class="zmdi zmdi-pin-drop"></i></label>
+								<input type="text" name="alamat" id="alamat" placeholder="Alamat" />
 							</div>
 							<div class="form-group">
 								<label for="tgl_lahir"><i class="zmdi zmdi-calendar"></i></label>
