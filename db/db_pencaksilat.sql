@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2023 at 01:12 PM
+-- Generation Time: Jun 09, 2023 at 03:19 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `skordigital`
+-- Database: `db_pencaksilat`
 --
 
 -- --------------------------------------------------------
@@ -139,7 +139,9 @@ CREATE TABLE `konfirmasi` (
 --
 
 INSERT INTO `konfirmasi` (`ID_konfirmasi`, `bank_tujuan`, `bank_pengirim`, `norek_pengirim`, `nm_pengirim`, `kontak`, `tgl_transfer`, `jumlah`, `bukti`, `catatan`, `datetime`, `status`) VALUES
-(1, '0808 0883 26542 - Bank ABC - A/N Satria Salam', 'BCA', '8239231', 'muqsibagas', '081382471566', '01/06/2023', '200000', '9a0b7c262f05ce5fc34e054a79c63813PHPUnit.png', 'sadasdsa', '2023-06-01 21:19:51', 'CLOSED');
+(1, '0808 0883 26542 - Bank ABC - A/N Satria Salam', 'BCA', '8239231', 'muqsibagas', '081382471566', '01/06/2023', '200000', '9a0b7c262f05ce5fc34e054a79c63813PHPUnit.png', 'sadasdsa', '2023-06-01 21:19:51', 'CLOSED'),
+(2, '0808 0883 26542', 'BCA', '8239231123', 'jono', '0812321321', '03/06/2023', '200000', '36aa52428b3e09af41be35628d46ec24WhatsApp_Image_2023-06-02_at_15.54.25.jpg', 'tfghrth', '2023-06-04 14:37:14', 'OPEN'),
+(3, '0808 0883 26542 - Bank ABC - A/N Fajar', 'BCA', '8239231123', 'jono', '081382471566', '01/06/2023', '200000', '429bef1403be2afc018faa984d4128f9logo.jpg', 'asdsa', '2023-06-09 00:56:38', 'OPEN');
 
 -- --------------------------------------------------------
 
@@ -396,24 +398,35 @@ CREATE TABLE `peserta` (
   `status` varchar(15) NOT NULL,
   `role` varchar(20) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL
+  `password` varchar(255) DEFAULT NULL,
+  `history` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `peserta`
 --
 
-INSERT INTO `peserta` (`ID_peserta`, `nm_lengkap`, `jenis_kelamin`, `tpt_lahir`, `tgl_lahir`, `tb`, `bb`, `kelas`, `asal_sekolah`, `kategori_tanding`, `golongan`, `kode_gr`, `kelas_tanding_FK`, `kontingen`, `foto`, `ktp`, `akta_lahir`, `ijazah`, `status`, `role`, `email`, `password`) VALUES
-(2, 'abdul', 'Laki-laki', 'Bekasi', '2023-06-01', 170, 65, '4', 'SMA 8', 'Tanding', 'Remaja', '', '1', 'BEKASI', '5559c214bf6c8ae3d77f20aa8a7db831PHPUnit.png', '', '5559c214bf6c8ae3d77f20aa8a7db831PHPUnit.png', '5559c214bf6c8ae3d77f20aa8a7db831PHPUnit.png', 'PAID', NULL, NULL, NULL),
-(3, 'masrul', 'Laki-laki', 'Bekasi', '2023-06-01', 170, 65, '4', 'SMA 8', 'Tanding', 'Remaja', '', '1', 'SBY', 'fc95170ea8ef563c7f6318a98c3902e3PHPUnit.png', '', 'fc95170ea8ef563c7f6318a98c3902e3PHPUnit.png', 'fc95170ea8ef563c7f6318a98c3902e3PHPUnit.png', 'PAID', NULL, NULL, NULL),
-(4, 'joji', 'Laki-laki', 'Bekasi', '2023-06-01', 170, 65, '4', 'SMA 8', 'Tanding', 'Usia Dini', '', '1', 'JOGJA', '2c4522a19f1b9e9ac76d4dfcc18c50abPHPUnit.png', '', '2c4522a19f1b9e9ac76d4dfcc18c50abPHPUnit.png', '2c4522a19f1b9e9ac76d4dfcc18c50abPHPUnit.png', 'PAID', NULL, NULL, NULL),
-(5, 'gerry', 'Laki-laki', 'Bekasi', '2023-06-01', 170, 65, '4', 'SMA 8', 'Tanding', 'Remaja', '', '1', 'JKT', '6a9b23ff84c92d2cd7fd0ecccea5061aPHPUnit.png', '', '6a9b23ff84c92d2cd7fd0ecccea5061aPHPUnit.png', '6a9b23ff84c92d2cd7fd0ecccea5061aPHPUnit.png', 'PAID', '', '', 'c8837b23ff8aaa8a2dde915473ce0991'),
-(6, 'gege', 'Laki-laki', 'Bekasi', '2023-06-01', 170, 65, '4', 'SMA 8', 'Tanding', 'Remaja', '', '1', 'BGR', 'ffd103eb72ca7726801004e22960f226PHPUnit.png', '', 'ffd103eb72ca7726801004e22960f226PHPUnit.png', 'ffd103eb72ca7726801004e22960f226PHPUnit.png', 'PAID', 'user', 'user@user.com', 'c8837b23ff8aaa8a2dde915473ce0991'),
-(7, 'gagah', 'Laki-laki', 'Bekasi', '2023-06-01', 170, 65, '4', 'SMA 8', 'Tanding', 'Remaja', '', '1', 'BKS', '597290a55d624f45d90e4f692ca8f6c1PHPUnit.png', '', '597290a55d624f45d90e4f692ca8f6c1PHPUnit.png', '597290a55d624f45d90e4f692ca8f6c1PHPUnit.png', 'PAID', NULL, NULL, NULL),
-(9, 'Moxie', 'Laki-laki', 'Bekasi', '1996-04-10', 170, 65, '', '', 'Tanding', 'Remaja', '', '', 'BEKASI', '59083c7e76796c9df8e733e3749b538aworkload.png', '', 'f9e175a5df168ce7f4b49a31caa9f1ecImage20230308085943.jpg', '', '', 'user', 'moxie@vip.com', 'asdf123'),
-(11, 'asdf', 'Laki-laki', 'Bekasi', '3331-03-31', 170, 65, '', '', 'Tanding', 'Remaja', '', '', 'BEKASI', 'efae01b96a1c24e9b2a63d0482c95b17logo.jpg', '', 'efae01b96a1c24e9b2a63d0482c95b17logo.jpg', '', '', 'user', 'asdf@asdasd.com', '1adbb3178591fd5bb0c248518f39bf6d'),
-(12, 'gerry', 'Laki-laki', 'Bekasi', '2000-09-19', 170, 65, '', '', 'Tanding', 'Remaja', '', '', 'KOLAT SMA 62', '57355bf8c5d2abb90992bcfa2a8e707flogo.jpg', '', '57355bf8c5d2abb90992bcfa2a8e707flogo.jpg', '', '', 'user', 'gerry@ok.com', '1adbb3178591fd5bb0c248518f39bf6d'),
-(13, 'asdfa', 'Laki-laki', 'Bekasi', '2023-06-03', 170, 44, '', '', 'Tanding', 'Remaja', '', '2', 'UI', '0ca364bb33702ebb63f6ad939f131d66logo.jpg', '', '0ca364bb33702ebb63f6ad939f131d66logo.jpg', '', '', 'user', 'asfads@kasdk.com', '1adbb3178591fd5bb0c248518f39bf6d');
+INSERT INTO `peserta` (`ID_peserta`, `nm_lengkap`, `jenis_kelamin`, `tpt_lahir`, `tgl_lahir`, `tb`, `bb`, `kelas`, `asal_sekolah`, `kategori_tanding`, `golongan`, `kode_gr`, `kelas_tanding_FK`, `kontingen`, `foto`, `ktp`, `akta_lahir`, `ijazah`, `status`, `role`, `email`, `password`, `history`) VALUES
+(2, 'abdul', 'Laki-laki', 'Bekasi', '2023-06-01', 170, 65, '4', 'SMA 8', 'Tanding', 'Remaja', '', '1', 'BEKASI', '5559c214bf6c8ae3d77f20aa8a7db831PHPUnit.png', '', '5559c214bf6c8ae3d77f20aa8a7db831PHPUnit.png', '5559c214bf6c8ae3d77f20aa8a7db831PHPUnit.png', 'PAID', NULL, NULL, NULL, '2'),
+(3, 'masrul', 'Laki-laki', 'Bekasi', '2023-06-01', 170, 65, '4', 'SMA 8', 'Tanding', 'Remaja', '', '1', 'SBY', 'fc95170ea8ef563c7f6318a98c3902e3PHPUnit.png', '', 'fc95170ea8ef563c7f6318a98c3902e3PHPUnit.png', 'fc95170ea8ef563c7f6318a98c3902e3PHPUnit.png', 'PAID', NULL, NULL, NULL, '3'),
+(4, 'joji', 'Laki-laki', 'Bekasi', '2023-06-01', 170, 65, '4', 'SMA 8', 'Tanding', 'Usia Dini', '', '1', 'JOGJA', '2c4522a19f1b9e9ac76d4dfcc18c50abPHPUnit.png', '', '2c4522a19f1b9e9ac76d4dfcc18c50abPHPUnit.png', '2c4522a19f1b9e9ac76d4dfcc18c50abPHPUnit.png', 'PAID', NULL, NULL, NULL, '2'),
+(5, 'gerry', 'Laki-laki', 'Bekasi', '2023-06-01', 170, 65, '4', 'SMA 8', 'Tanding', 'Remaja', '', '1', 'JKT', '6a9b23ff84c92d2cd7fd0ecccea5061aPHPUnit.png', '', '6a9b23ff84c92d2cd7fd0ecccea5061aPHPUnit.png', '6a9b23ff84c92d2cd7fd0ecccea5061aPHPUnit.png', 'PAID', '', '', 'c8837b23ff8aaa8a2dde915473ce0991', '4'),
+(6, 'gegeh', 'Laki-laki', 'Bekasi', '2023-06-01', 170, 65, '4', 'SMA 8', 'Tanding', 'Remaja', '', '1', 'BGR', 'ffd103eb72ca7726801004e22960f226PHPUnit.png', '', 'ffd103eb72ca7726801004e22960f226PHPUnit.png', 'ffd103eb72ca7726801004e22960f226PHPUnit.png', 'PAID', 'user', 'user@user.com', 'c8837b23ff8aaa8a2dde915473ce0991', '2'),
+(7, 'gagah', 'Laki-laki', 'Bekasi', '2023-06-01', 170, 65, '4', 'SMA 8', 'Tanding', 'Remaja', '', '1', 'BKS', '597290a55d624f45d90e4f692ca8f6c1PHPUnit.png', '', '597290a55d624f45d90e4f692ca8f6c1PHPUnit.png', '597290a55d624f45d90e4f692ca8f6c1PHPUnit.png', 'PAID', NULL, NULL, NULL, '1'),
+(9, 'Moxie', 'Laki-laki', 'Bekasi', '1996-04-10', 170, 65, '', '', 'Tanding', 'Remaja', '', '', 'BEKASI', '59083c7e76796c9df8e733e3749b538aworkload.png', '', 'f9e175a5df168ce7f4b49a31caa9f1ecImage20230308085943.jpg', '', 'PAID', 'user', 'moxie@vip.com', 'asdf123', '1'),
+(11, 'asdf', 'Laki-laki', 'Bekasi', '3331-03-31', 170, 65, '', '', 'Tanding', 'Remaja', '', '', 'BEKASI', 'efae01b96a1c24e9b2a63d0482c95b17logo.jpg', '', 'efae01b96a1c24e9b2a63d0482c95b17logo.jpg', '', 'PAID', 'user', 'asdf@asdasd.com', '1adbb3178591fd5bb0c248518f39bf6d', '2'),
+(12, 'gerry', 'Laki-laki', 'Bekasih', '2000-09-11', 170, 61, '', '', 'Tanding', 'Remaja', '', '', 'KOLAT SMA 62', '57355bf8c5d2abb90992bcfa2a8e707flogo.jpg', '', '57355bf8c5d2abb90992bcfa2a8e707flogo.jpg', '', 'PAID', 'user', 'gerry@ok.com', '1adbb3178591fd5bb0c248518f39bf6d', '4'),
+(13, 'asdfa', 'Laki-laki', 'Bekasi', '2023-06-03', 170, 44, '', '', 'Tanding', 'Remaja', '', '1', 'UI', '0ca364bb33702ebb63f6ad939f131d66logo.jpg', '', '0ca364bb33702ebb63f6ad939f131d66logo.jpg', '', 'PAID', 'user', 'asfads@kasdk.com', '1adbb3178591fd5bb0c248518f39bf6d', '3'),
+(14, 'admin', 'Laki-Laki', 'Bekasi', '0000-00-00', 0, 0, '', '', '', '', '', '', '', '', '', '', '', 'PAID', 'admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', '3'),
+(16, 'hyro', 'Laki-laki', 'Bekasi', '2000-04-09', 170, 65, '', '', 'Tanding', 'Remaja', '', '1', 'KOLAT UNIVERSITAS GUNADARMA.', 'e103e2344f77b7b87a64a8747050919cworkload.png', '', 'a5a0b2e95e7c5128db0968099c4cde02logo.jpg', '', 'PAID', 'user', 'hyro@zynga.com', '1adbb3178591fd5bb0c248518f39bf6d', '4'),
+(17, 'Renyek', 'Laki-laki', 'Jakarta', '1990-10-09', 171, 52, '', '', 'Tanding', 'Remaja', '', '1', 'KOLAT ADRIA BINTARO', '3af4ad5ff757926d0092ca14c96a8954WhatsApp_Image_2023-06-03_at_21.52.14.jpg', '', '740babfed68a52b071e87eaf7562551eImage20230308085943.jpg', '', 'PAID', 'user', 'renyek@gmail.com', '1adbb3178591fd5bb0c248518f39bf6d', '3'),
+(18, 'testing', 'Laki-laki', 'Bekasi', '2023-06-04', 165, 67, '', '', 'Tanding', 'Remaja', '', '1', 'KOLAT SMAN 104', '0582fd19f5734f86749598f916b694dcScreenshot_2023-03-10_104024.png', '', '2a73d6c46a317d6a22b04419c21ca491Screenshot_2023-04-06_084330.png', '', 'PAID', 'user', 'testing@aja.com', '1adbb3178591fd5bb0c248518f39bf6d', '3'),
+(19, 'testing', 'Laki-laki', 'Bekasi', '2001-09-22', 165, 61, '', '', 'Tanding', 'Remaja', '', '1', 'SMA 34', '0582fd19f5734f86749598f916b694dcScreenshot_2023-03-10_104024.png', '', '463cf102b651a45060d971779fa04054Screenshot_2023-03-17_164229.png', '', 'PAID', 'user', 'testing@aja.com', '1adbb3178591fd5bb0c248518f39bf6d', '3'),
+(20, 'testing', 'Laki-laki', 'Jakarta', '1996-05-04', 165, 66, '', '', 'Tanding', 'Remaja', '', '1', 'KELOMPOK KEBUGARAN THE DHARMAWANGSA HOTEL', '0582fd19f5734f86749598f916b694dcScreenshot_2023-03-10_104024.png', '', 'b020d8c1f04ff8b48d3e8beab98c10eaScreenshot_2023-03-24_152104.png', '', 'PAID', 'user', 'testing@aja.com', '040b7cf4a55014e185813e0644502ea9', '3'),
+(21, 'asdfads', 'Laki-laki', 'Jakarta', '2023-06-04', 165, 61, '', '', 'Tanding', 'Remaja', '', '1', 'KOLAT SDN GNR (GENERASI RABBANI )', 'a9eff84ffe76d74771d3b8fc9848b7a7Screenshot_2023-03-10_104024.png', '', 'ffbb07eb86873c07f70e68d3926a97f8Screenshot_2023-03-17_164229.png', '', 'PAID', 'user', 'asdfasdf@asfd.com', '1adbb3178591fd5bb0c248518f39bf6d', '3'),
+(22, 'testing', 'Laki-laki', 'Jakarta', '2023-06-04', 165, 59, '', '', 'Tanding', 'Remaja', '', '1', 'SMA 34', '0582fd19f5734f86749598f916b694dcScreenshot_2023-03-10_104024.png', '', '463cf102b651a45060d971779fa04054Screenshot_2023-03-17_164229.png', '', 'PAID', 'user', 'testing@aja.com', '1adbb3178591fd5bb0c248518f39bf6d', '2'),
+(23, 'jono', 'Laki-laki', 'Jakarta', '2023-06-04', 165, 51, '', '', 'Tanding', 'Remaja', '', '1', 'KOLAT BARU', '4cad1071a3906c07311a8004df756b7e882d883a7776be47ebbbef1c53f3555d.jpg', '', '66892dfebd8125892f077c5d5144a0aelogo.jpg', '', '', 'user', 'jono@ohjono.com', '1adbb3178591fd5bb0c248518f39bf6d', '4'),
+(24, 'jekih', 'Laki-laki', 'Bekasi', '2023-06-07', 160, 56, '', '', 'Tanding', 'Remaja', '', '1', 'KOLAT BAKRIE TELECOM', 'a296a966f4da16e08da399491a63a794882d883a7776be47ebbbef1c53f3555d.jpg', '', 'ae02874b47ff77ef0000c248d17cc8daImage20230308085943.jpg', '', '', 'user', 'jeki@m.com', '1adbb3178591fd5bb0c248518f39bf6d', '4');
 
 -- --------------------------------------------------------
 
@@ -432,11 +445,13 @@ CREATE TABLE `undian` (
 --
 
 INSERT INTO `undian` (`id_undian`, `id_peserta`, `no_undian`) VALUES
-(1, 2, 1),
-(2, 3, 5),
-(3, 5, 3),
-(4, 6, 2),
-(5, 7, 4);
+(1, 3, 7),
+(2, 13, 1),
+(3, 17, 5),
+(4, 18, 4),
+(5, 19, 3),
+(6, 20, 6),
+(7, 21, 2);
 
 -- --------------------------------------------------------
 
@@ -605,7 +620,7 @@ ALTER TABLE `kelastanding`
 -- AUTO_INCREMENT for table `konfirmasi`
 --
 ALTER TABLE `konfirmasi`
-  MODIFY `ID_konfirmasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_konfirmasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `medali`
@@ -647,13 +662,13 @@ ALTER TABLE `nilai_tunggal`
 -- AUTO_INCREMENT for table `peserta`
 --
 ALTER TABLE `peserta`
-  MODIFY `ID_peserta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `ID_peserta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `undian`
 --
 ALTER TABLE `undian`
-  MODIFY `id_undian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_undian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `undian_tgr`
