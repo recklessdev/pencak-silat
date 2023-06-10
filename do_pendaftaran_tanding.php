@@ -73,19 +73,19 @@
 		{
 			$kelas_tanding = '6'; // KELAS F
 		}
-		else if($tb >= '173' && $bb >= '80' && $bb <= '80')
+		else if($tb >= '173' && $bb >= '75' && $bb <= '80')
 		{
 			$kelas_tanding = '7'; // KELAS G
 		}
-		else if($tb >= '175' && $bb >= '85' && $bb <= '85')
+		else if($tb >= '175' && $bb >= '80' && $bb <= '85')
 		{
 			$kelas_tanding = '8'; // KELAS H
 		}
-		else if($btbb >= '178' && $bb >= '90' && $bb <= '90')
+		else if($btbb >= '178' && $bb >= '85' && $bb <= '90')
 		{
 			$kelas_tanding = '9'; // KELAS I
 		}
-		else if($tb >= '180' && $bb >= '45' && $bb <= '95')
+		else if($tb >= '180' && $bb >= '90' && $bb <= '95')
 		{
 			$kelas_tanding = '10'; // KELAS J
 		}
@@ -161,19 +161,19 @@
 		{
 			$kelas_tanding = '6';
 		}
-		else if($tb >= '185' && $bb >= '80' && $bb <= '80')
+		else if($tb >= '185' && $bb >= '75' && $bb <= '80')
 		{
 			$kelas_tanding = '7';
 		}
-		else if($tb >= '188' && $bb >= '85' && $bb <= '85')
+		else if($tb >= '188' && $bb >= '80' && $bb <= '85')
 		{
 			$kelas_tanding = '8';
 		}
-		else if($tb >= '190' && $bb >= '90' && $bb <= '90')
+		else if($tb >= '190' && $bb >= '85' && $bb <= '90')
 		{
 			$kelas_tanding = '9';
 		}
-		else if($tb >= '195' && $bb >= '45' && $bb <= '95')
+		else if($tb >= '195' && $bb >= '90' && $bb <= '95')
 		{
 			$kelas_tanding = '10';
 		}

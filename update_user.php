@@ -22,7 +22,7 @@
                   tb='$tb', 
                   bb='$bb',
                   kontingen='$kontingen',
-                  alamat=$alamat
+                  alamat='$alamat'
                 WHERE ID_peserta='$_SESSION[ID_peserta]'";
 
     $result = mysqli_query($koneksi, "$sql");
